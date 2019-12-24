@@ -1,66 +1,47 @@
-package DrV.company;
-
-import java.util.Scanner;
+package DrV.company.lesson6;
 
 public class Main {
-//1. Прописываем метод main()
     public static void main(String[] args) {
-//2. Создаем переменные всех пройденных типов данных и инициализируем их значения
-        byte byteVal = 10;
-        short shortVal = -100;
-        int intVal = 1000;
-        long longVal = 1000L;
-        float floatVal = 123.23f;
-        double doubleVal = 12345.123;
-        char charVal = '\uabcd';
-        boolean booleanVal = true;
-    }
-//3. Метод вычисляющий выражение a*(b+(c/d)) возвращающий результат
-        private static float calculate (float a, float b,float c, float d) {
-            return a*(b+(c/d));
-        }
-//4. Метод проверяющий что сумма двух целых чисел находится в промежутке от 10 до 20 включительно
-        private static boolean calculate1 (int x1, int x2) {
-          if (x1 + x2 >= 10 && x1 + x2 <= 20) {
-                return true;
-            } else {
-                return false;
-                   }
-        }
-//5. Метод определяющий знак целого числа
-        private static void positivOrNegative (int x3){
-        if (x3 >=0){
-            System.out.println("Данное число положительное");
+        Cat cat = new Cat("Barsik", 150, 1, 1.5F);
+        Dog dog = new Dog("Sharik", 600, 8, 0.5F);
+        cat.animalInfo();
+        dog.animalInfo();
+        dog.dogInfo();
+//  Проверка на валидность по собакам
+        if (dog.run() == true) {
+            System.out.print("Dog: " + dog.name + ", run: true");
         }else {
-            System.out.println("Данное число отрицательное");
-              }
+            System.out.print("Dog: " + dog.name + ", run: false");
         }
-//6. Метод определяющий знак целого числа
-        private static boolean isNegative (int x4) {
-        if (x4 < 0) {
-            return true;
-                     }
-            return false;
+        if (dog.swim() == true) {
+            System.out.print(", swim: true");
+        }else {
+            System.out.print(", swim: false");
         }
-//7. Метод осуществляющий вывод имени
-        private static void hameOut (String name) {
-            System.out.println("Привет, " + name);
+        if (dog.jump() == true) {
+            System.out.println(", jump: true");
+        }else {
+            System.out.println(", jump: false");
         }
-//8. Метод проверяющий год на високосность
-        private static void eventYear (int year) {
-            System.out.println("Введите проверяемый год");
-                Scanner scanner = new Scanner (System.in);
-                year = scanner.nextInt();
-                if (year % 400 == 0){
-                    System.out.println("ВВеденный год високосный");
-                } else
-                if (year % 100 == 0) {
-                    System.out.println("ВВеденный год не високосный");
-                } else
-                if (year % 4 == 0) {
-                    System.out.println("ВВеденный год високосный");
-                } else {
-                    System.out.println("ВВеденный год не високосный");
-                }
-            }
+//  Проверка на валидность по кошкам
+        cat.catInfo();
+        if (cat.run() == true) {
+            System.out.print("Cat: " + cat.name + ", run: true");
+        }else {
+            System.out.print("Cat: " + cat.name + ", run: false");
+        }
+        if (cat.swim() == true) {
+            System.out.print( ", swim: true");
+        }else {
+            System.out.print(", swim: false");
+        }
+        if (cat.jump() == true) {
+            System.out.println(", jump: true");
+        }else {
+            System.out.println(", jump: false");
+        }
+
+
+    }
+
 }
